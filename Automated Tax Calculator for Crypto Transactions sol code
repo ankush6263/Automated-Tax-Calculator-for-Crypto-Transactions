@@ -1,0 +1,160 @@
+{
+  "accounts": {
+    "account{0}": "0x4185Ec5EBd1f99Eb8A1d82623b1F385404863499"
+  },
+  "linkReferences": {},
+  "transactions": [
+    {
+      "timestamp": 1745395953142,
+      "record": {
+        "value": "0",
+        "inputs": "(uint256)",
+        "parameters": [
+          "1"
+        ],
+        "name": "",
+        "type": "constructor",
+        "abi": "0xadf77ad84c40b5f74290bf757e68d7643e2b9e7bf693c1a4ec803edd585d55e5",
+        "contractName": "AutomatedTaxCalculator",
+        "bytecode": "6080604052348015600e575f80fd5b506040516106843803806106848339818101604052810190602e919060ab565b335f806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806001819055505060d1565b5f80fd5b5f819050919050565b608d81607d565b81146096575f80fd5b50565b5f8151905060a5816086565b92915050565b5f6020828403121560bd5760bc6079565b5b5f60c8848285016099565b91505092915050565b6105a6806100de5f395ff3fe608060405234801561000f575f80fd5b5060043610610055575f3560e01c806317fdcc8e14610059578063483a931014610075578063771a3a1d146100a5578063811a559f146100c35780638da5cb5b146100df575b5f80fd5b610073600480360381019061006e91906102cd565b6100fd565b005b61008f600480360381019061008a91906102cd565b6101d4565b60405161009c9190610307565b60405180910390f35b6100ad6101fb565b6040516100ba9190610307565b60405180910390f35b6100dd60048036038101906100d8919061037a565b610201565b005b6100e7610273565b6040516100f491906103c7565b60405180910390f35b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461018a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161018190610460565b60405180910390fd5b5f6001549050816001819055507fa8ee157eb2a9aa895d74df4d2d3bc0ad165ff3162f8ec46a4ecf602dd5c48fda81836040516101c892919061047e565b60405180910390a15050565b5f806064600154846101e691906104d2565b6101f09190610540565b905080915050919050565b60015481565b5f60646001548361021291906104d2565b61021c9190610540565b90508273ffffffffffffffffffffffffffffffffffffffff167f47c4de62e8d4c3f6f5d4994d87c0dacde1d00f45f9c7c4d97263a56e96c02d41838360405161026692919061047e565b60405180910390a2505050565b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f80fd5b5f819050919050565b6102ac8161029a565b81146102b6575f80fd5b50565b5f813590506102c7816102a3565b92915050565b5f602082840312156102e2576102e1610296565b5b5f6102ef848285016102b9565b91505092915050565b6103018161029a565b82525050565b5f60208201905061031a5f8301846102f8565b92915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61034982610320565b9050919050565b6103598161033f565b8114610363575f80fd5b50565b5f8135905061037481610350565b92915050565b5f80604083850312156103905761038f610296565b5b5f61039d85828601610366565b92505060206103ae858286016102b9565b9150509250929050565b6103c18161033f565b82525050565b5f6020820190506103da5f8301846103b8565b92915050565b5f82825260208201905092915050565b7f4f6e6c79206f776e65722063616e2063616c6c20746869732066756e6374696f5f8201527f6e00000000000000000000000000000000000000000000000000000000000000602082015250565b5f61044a6021836103e0565b9150610455826103f0565b604082019050919050565b5f6020820190508181035f8301526104778161043e565b9050919050565b5f6040820190506104915f8301856102f8565b61049e60208301846102f8565b9392505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f6104dc8261029a565b91506104e78361029a565b92508282026104f58161029a565b9150828204841483151761050c5761050b6104a5565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f61054a8261029a565b91506105558361029a565b92508261056557610564610513565b5b82820490509291505056fea26469706673582212207c7256e603091a23d6049d4ca61517e61027f439dad4216304dc0dabcc80a78564736f6c634300081a0033",
+        "linkReferences": {},
+        "from": "account{0}"
+      }
+    }
+  ],
+  "abis": {
+    "0xadf77ad84c40b5f74290bf757e68d7643e2b9e7bf693c1a4ec803edd585d55e5": [
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "transactionAmount",
+            "type": "uint256"
+          }
+        ],
+        "name": "logTax",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_initialTaxRate",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "transactionAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "taxAmount",
+            "type": "uint256"
+          }
+        ],
+        "name": "TaxCalculated",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "oldRate",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "newRate",
+            "type": "uint256"
+          }
+        ],
+        "name": "TaxRateUpdated",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "newRate",
+            "type": "uint256"
+          }
+        ],
+        "name": "updateTaxRate",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "transactionAmount",
+            "type": "uint256"
+          }
+        ],
+        "name": "calculateTax",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "taxRate",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+  }
+}
