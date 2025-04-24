@@ -4,27 +4,64 @@ pragma solidity ^0.8.0;
 contract CryptoTaxCalculator {
     address public owner;
     uint256 public taxRate; // tax rate in basis points (e.g., 500 = 5%)
+    uint256 public totalTaxesCollected; // Keeps track of total taxes collected
 
     event TaxCalculated(address indexed user, uint256 transactionAmount, uint256 taxAmount);
+    event TaxPaid(address indexed user, uint256 taxAmount);
 
     constructor(uint256 _taxRate) {
         owner = msg.sender;
         taxRate = _taxRate; // e.g., 500 for 5%
     }
 
+    // Calculate tax based on the transaction amount
     function calculateTax(uint256 amount) public view returns (uint256) {
         require(amount > 0, "Amount must be greater than zero");
         return (amount * taxRate) / 10000;
     }
 
+    // Update the tax rate (only callable by the owner)
     function updateTaxRate(uint256 newRate) external {
         require(msg.sender == owner, "Only owner can update the tax rate");
         taxRate = newRate;
     }
 
+    // Simulate a transaction and emit tax calculation
     function simulateTransaction(uint256 amount) external returns (uint256) {
         uint256 taxAmount = calculateTax(amount);
         emit TaxCalculated(msg.sender, amount, taxAmount);
         return taxAmount;
+    }
+
+    // Pay the calculated tax directly to the contract
+    function payTax() external payable {
+        uint256 taxAmount = calculateTax(msg.value);
+        require(msg.value >= taxAmount, "Insufficient amount to pay tax");
+
+        // Update the total taxes collected
+        totalTaxesCollected += taxAmount;
+
+        // Emit an event to log the payment
+        emit TaxPaid(msg.sender, taxAmount);
+    }
+
+    // Function to check the current tax rate
+    function getTaxRate() external view returns (uint256) {
+        return taxRate;
+    }
+
+    // Function to check the balance of the contract
+    function getContractBalance() external view returns (uint256) {
+        return address(this).balance;
+    }
+
+    // Function to allow the owner to withdraw the collected taxes
+    function withdrawTaxes() external {
+        require(msg.sender == owner, "Only the owner can withdraw taxes");
+        uint256 amount = address(this).balance;
+        require(amount > 0, "No taxes available to withdraw");
+
+        // Transfer the balance to the owner
+        payable(owner).transfer(amount);
     }
 }
